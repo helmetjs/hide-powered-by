@@ -1,0 +1,30 @@
+{
+  "name": "hide-powered-by",
+  "author": "Adam Baldwin <baldwin@andyet.net> (http://andyet.net/team/baldwin)",
+  "contributors": [
+    "Evan Hahn <me@evanhahn.com> (http://evanhahn.com)"
+  ],
+  "description": "Middleware to remove the X-Powered-By header.",
+  "version": "0.1.0",
+  "keywords": [
+    "helmet",
+    "security",
+    "express",
+    "connect",
+    "x-powered-by",
+    "powered-by"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/helmetjs/hide-powered-by.git"
+  },
+  "bugs": "https://github.com/helmetjs/hide-powered-by/issues",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "connect": "^3.3.1",
+    "mocha": "^2.0.1",
+    "supertest": "^0.14.0"
+  }
+}
