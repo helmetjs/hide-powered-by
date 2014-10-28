@@ -1,7 +1,6 @@
 module.exports = function hidePoweredBy(options) {
 
-  options = (options || {});
-  var setTo = options.setTo;
+  var setTo = (options || {}).setTo;
 
   if (setTo) {
     return function hidePoweredBy(req, res, next) {
