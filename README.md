@@ -1,6 +1,8 @@
 Hide X-Powered-By
 =================
 
+[![Build Status](https://travis-ci.org/helmetjs/hide-powered-by.svg?branch=master)](https://travis-ci.org/helmetjs/hide-powered-by)
+
 Simple middleware to remove the `X-Powered-By` HTTP header if it's set.
 
 Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express (or whichever framework you use). For example, `X-Powered-By: Express` is sent in every HTTP request coming from Express, by default.
