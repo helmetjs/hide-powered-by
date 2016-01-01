@@ -3,6 +3,8 @@ Hide X-Powered-By
 [![Build Status](https://travis-ci.org/helmetjs/hide-powered-by.svg?branch=master)](https://travis-ci.org/helmetjs/hide-powered-by)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+[_Looking for a changelog?_](https://github.com/helmetjs/helmet/blob/master/HISTORY.md)
+
 Simple middleware to remove the `X-Powered-By` HTTP header if it's set.
 
 Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express (or whichever framework you use). For example, `X-Powered-By: Express` is sent in every HTTP request coming from Express, by default. This won't provide much security benefit ([as discussed here](https://github.com/strongloop/express/pull/2813#issuecomment-159270428)), but might help a tiny bit. It will also improve performance by reducing the number of bytes sent.
