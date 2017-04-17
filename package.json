@@ -2,7 +2,7 @@
   "name": "hide-powered-by",
   "author": "Adam Baldwin <baldwin@andyet.net> (http://andyet.net/team/baldwin)",
   "contributors": [
-    "Evan Hahn <me@evanhahn.com> (http://evanhahn.com)"
+    "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)"
   ],
   "description": "Middleware to remove the X-Powered-By header.",
   "version": "1.0.0",
