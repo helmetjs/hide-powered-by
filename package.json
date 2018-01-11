@@ -21,7 +21,8 @@
   },
   "bugs": "https://github.com/helmetjs/hide-powered-by/issues",
   "scripts": {
-    "test": "standard && mocha"
+    "pretest": "standard --fix",
+    "test": "mocha"
   },
   "devDependencies": {
     "connect": "^3.6.5",
