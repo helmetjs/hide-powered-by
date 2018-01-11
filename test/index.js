@@ -5,27 +5,17 @@ var request = require('supertest')
 var assert = require('assert')
 
 describe('hidePoweredBy', function () {
-  function test (name, options) {
-    it(name, function (done) {
-      var app = connect()
-      app.use(function (req, res, next) {
-        res.setHeader('X-Powered-By', 'Computers')
-        next()
-      })
-      app.use(options.middleware)
-      app.use(function (req, res) {
-        res.end('Hello world!')
-      })
-      request(app).get('/')
-        .end(function (err, res) {
-          if (err) {
-            done(err)
-            return
-          }
-          assert.equal(res.header['x-powered-by'], options.shouldBe)
-          done()
-        })
+  function app () {
+    var result = connect()
+    result.use(function (req, res, next) {
+      res.setHeader('X-Powered-By', 'Computers')
+      next()
     })
+    result.use(hidePoweredBy.apply(null, arguments))
+    result.use(function (req, res) {
+      res.end('Hello world!')
+    })
+    return result
   }
 
   it('works even if no header is set', function (done) {
@@ -34,6 +24,7 @@ describe('hidePoweredBy', function () {
     app.use(function (req, res) {
       res.end('Hello world!')
     })
+
     request(app).get('/')
       .end(function (err, res) {
         if (err) {
@@ -45,14 +36,23 @@ describe('hidePoweredBy', function () {
       })
   })
 
-  test('removes the X-Powered-By header', {
-    middleware: hidePoweredBy(),
-    shouldBe: undefined
+  it('removes the X-Powered-By header when no arguments are passed', function () {
+    return request(app()).get('/')
+      .expect(function (res) {
+        assert(!('x-powered-by' in res.headers))
+      })
   })
 
-  test('allows you to explicitly set the header', {
-    middleware: hidePoweredBy({ setTo: 'steampowered' }),
-    shouldBe: 'steampowered'
+  it('removes the X-Powered-By header when empty options are passed', function () {
+    return request(app({})).get('/')
+      .expect(function (res) {
+        assert(!('x-powered-by' in res.headers))
+      })
+  })
+
+  it('allows you to explicitly set the header', function () {
+    return request(app({ setTo: 'steampowered' })).get('/')
+      .expect('X-Powered-By', 'steampowered')
   })
 
   it('names its function and middleware', function () {
