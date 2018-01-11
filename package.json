@@ -24,10 +24,10 @@
     "test": "standard && mocha"
   },
   "devDependencies": {
-    "connect": "^3.3.1",
-    "mocha": "^2.0.1",
-    "standard": "^5.4.1",
-    "supertest": "^1.1.0"
+    "connect": "^3.6.5",
+    "mocha": "^4.1.0",
+    "standard": "^10.0.3",
+    "supertest": "^3.0.0"
   },
   "standard": {
     "globals": [
