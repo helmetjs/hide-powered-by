@@ -31,7 +31,7 @@ describe('hidePoweredBy', function () {
           done(err)
           return
         }
-        assert.equal(res.header['x-powered-by'], undefined)
+        assert.strictEqual(res.header['x-powered-by'], undefined)
         done()
       })
   })
@@ -56,7 +56,7 @@ describe('hidePoweredBy', function () {
   })
 
   it('names its function and middleware', function () {
-    assert.equal(hidePoweredBy.name, 'hidePoweredBy')
-    assert.equal(hidePoweredBy().name, 'hidePoweredBy')
+    assert.strictEqual(hidePoweredBy.name, 'hidePoweredBy')
+    assert.strictEqual(hidePoweredBy().name, 'hidePoweredBy')
   })
 })
