@@ -5,7 +5,7 @@
     "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)"
   ],
   "description": "Middleware to remove the X-Powered-By header",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "keywords": [
     "helmet",
